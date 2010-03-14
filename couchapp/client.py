@@ -12,7 +12,7 @@ import tempfile
 
 from couchapp import __version__
 from couchapp.errors import ResourceNotFound, ResourceConflict,\
-PreconditionFailed, RequestFailed, BulkSaveError
+PreconditionFailed, RequestFailed, BulkSaveError, Unauthorized
 from couchapp.restkit import Resource, HttpResponse, ResourceError, request
 from couchapp.restkit import util
 import couchapp.simplejson as json
