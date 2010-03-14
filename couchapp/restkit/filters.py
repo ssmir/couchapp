@@ -28,6 +28,7 @@ ex::
 import base64
 import os
 import urlparse
+import urllib
 
 
 from couchapp.restkit.errors import InvalidUrl
@@ -40,7 +41,7 @@ class BasicAuth(object):
     """ Simple filter to manage basic authentification"""
     
     def __init__(self, username, password):
-        self.credentials = (username, password)
+        self.credentials = (username, urllib.unquote(password))
     
     def on_request(self, req):
         encode = base64.encodestring("%s:%s" % self.credentials)[:-1]
